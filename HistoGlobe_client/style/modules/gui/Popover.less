@@ -1,0 +1,324 @@
+@popover_width: 450px;
+@popover_height: @popover_width * 10/16;
+@popover_close_size: 30px;
+@popover_title_padding: 0px;
+@popover_body_padding: 15px;
+
+.guiPopover, .guiPopoverBig {
+  border-radius: 0;
+  width: @popover_width;
+  height: 350px;
+  opacity: 0;
+  .transition-property(opacity);
+  .transition-duration(0.2s);
+  .transition-timing-function(ease-in-out);
+  box-shadow: 0 1px @shadow_radius rgba(0,0,0,@shadow_intensity);
+
+  .guiPopoverBodyV1, .guiPopoverBodyV2 {
+  //font: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: @primary_font_face;
+  position: absolute;
+  padding: @popover_body_padding;
+
+    .guiPopoverContent {
+
+      .hivent-body {
+
+        .guiPopoverTitle {
+          font-family: @primary_font_face;
+          font-size: 27px;
+          font-weight: 100;
+          padding-left: 0;
+          padding-bottom: 10px;
+          margin: 0;
+          line-height: normal;
+        }
+
+        .hivent-content {
+
+          font-size: 10pt;
+          text-align: left;
+          max-height: 200px;
+          overflow: auto;
+
+          span {
+            color: rgb(170, 170, 170);
+            text-align: right;
+            margin-top: 0px;
+            font-size: 10pt;
+
+            i {
+              padding-left: 10px;
+              cursor: pointer;
+
+              &:hover {
+                //color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .info-links {
+      position: absolute;
+      bottom: 5px;
+      font-size: 12px;
+      color: rgb(170, 170, 170);
+
+      a {
+        color: rgb(170, 170, 170);
+        padding-left: 5px;
+      }
+
+      a:hover {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.fullscreen {
+    max-height: 60%;
+  }
+
+
+
+  .guiPopoverBodyV1 {
+    color: #000000;
+    top: 0;
+    padding-top: 40px;
+    max-height: 180px;
+
+    .guiPopoverContent {
+      //position: absolute;
+      font-size: 12pt;
+      bottom: 30px;
+
+      padding-left: 0px;
+    }
+  }
+
+  .guiPopoverBodyV2 {
+    height: 350px;
+    width: 100%;
+    bottom: 0;
+    color: #ffffff;
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgb(0,0,0,0));
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgb(0,0,0,0));
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgb(0,0,0,0));
+    background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgb(0,0,0,0));
+    background-image: linear-gradient(top, rgba(0,0,0,0), rgb(0,0,0,0));
+
+    .guiPopoverContent {
+      position: absolute;
+      font-size: 12pt;
+      bottom: 30px;
+      padding-right: 15px;
+      padding-left: 0px;
+    }
+  }
+
+  .guiPopoverBodyBig {
+    //font: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-family: @primary_font_face;
+    padding: @popover_body_padding;
+    background-image: -webkit-linear-gradient(right, rgba(0,0,0,0), rgb(0,0,0,0));
+    background-image: -moz-linear-gradient(right, rgba(0,0,0,0), rgb(0,0,0,0));
+    background-image: -ms-linear-gradient(right, rgba(0,0,0,0), rgb(0,0,0,0));
+    background-image: -o-linear-gradient(right, rgba(0,0,0,0), rgb(0,0,0,0));
+    background-image: linear-gradient(right, rgba(0,0,0,0), rgb(0,0,0,0));
+
+    &.fullscreen {
+      max-height: 60%;
+    }
+
+    .guiPopoverContentBig {
+
+      .hivent-body-big {
+        padding-top: 30px;
+
+        .guiPopoverTitleBig {
+          font-family: @primary_font_face;
+          font-size: 27px;
+          font-weight: 100;
+          padding-left: 0;
+          padding-bottom: 10px;
+          margin: 0;
+          line-height: normal;
+        }
+
+        .hivent-content-big {
+          // text-align:justify; // -> no justified text
+          span {
+            color: rgb(170, 170, 170);
+          }
+        }
+      }
+
+      i {
+        padding-left: 5px;
+        pointer-events: all;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .info-links-big {
+      position: absolute;
+      bottom: 5px;
+      font-size: 12px;
+      color: rgb(170, 170, 170);
+
+      a {
+        pointer-events: all;
+        color: rgb(170, 170, 170);
+        padding-left: 5px;
+      }
+
+      a:hover {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.fullscreen {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    max-width: 600px;
+    min-width: 300px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+  }
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .close-button {
+    position: absolute;
+    background-color: #000000;
+    background-image: url("/../../config/common/graphics/close.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    pointer-events: all;    // important, so that hivent box can be closed in fullscreen
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .expand2FS, .compress2Normal {
+    position: absolute;
+    background-color: #000000;
+    border-radius: 50%;
+    z-index: 5;
+
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    //text-shadow: 0 2px 0 #000;
+    bottom: 8px;
+    right: 8px;
+    cursor: pointer;
+    pointer-events: all;
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    i {
+      position: relative;
+      top: 5px;
+      left: 6px;
+      color: #D5C900;
+      font-size: 16pt;
+    }
+  }
+
+  .go2Video, .back2Normal  {
+    position: absolute;
+    background-color: #000000;
+    border-radius: 50%;
+    z-index: 5;
+
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    cursor: pointer;
+    pointer-events: all;
+
+    top: 50%;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .go2Video {
+    right: 8px;
+
+    i {
+      position: relative;
+      top: 5px;
+      left: 4px;
+      color: #D5C900;
+      font-size: 16pt;
+    }
+  }
+
+  .back2Normal {
+    left: 8px;
+
+    i {
+      position: relative;
+      top: 5px;
+      left: 4px;
+      color: #D5C900;
+      font-size: 16pt;
+    }
+  }
+}
+
+.link-button {
+  display: block;
+  margin: auto;
+  text-align: center;
+  background-color: #fc0;
+  font-size: 14px;
+  color: #fff;
+  padding: 8px;
+  margin-top: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  pointer-events: all;
+
+  &:hover {
+    color: #fff;
+  }
+}

@@ -1,0 +1,58 @@
+#histograph-canvas
+{
+  position: absolute;
+  width: 100%;
+  height: 0; /* initital value */
+  bottom: @timeline_height;
+}
+
+/* same level as NowMarker */
+#histograph-centerline
+{
+  position: absolute;
+  width: @histograph_centerline_width;
+  height: 0; /* initital value */
+  left: 50%;
+  bottom: @timeline_height;
+  margin-left: -@histograph_centerline_width/2;
+  z-index: 1;
+
+  background-color: @color_bg_dark;
+  opacity: @now_marker_opacity;
+}
+
+
+// -----------------------------------------------------------------------------
+// AREA HISTORY
+
+.graph-area
+{
+  stroke-width: @histograph_area_line_width;
+  stroke: @color_bg_light;
+}
+
+.graph-area-short-name
+{
+  font-face: @primary_font_face;
+  font-size: @short_name_font_size;
+  fill: @color_bg_light;
+}
+.graph-area-formal-name
+{
+  font-face: @primary_font_face;
+  font-size: @formal_name_font_size;
+  font-style: italic;
+  fill: @color_bg_light;
+}
+
+.graph-hivent
+{
+  fill: @color_bg_light;
+}
+
+.graph-hivent-name
+{
+  font-face: @primary_font_face;
+  font-size: @formal_name_font_size;
+  fill: @color_bg_light;
+}

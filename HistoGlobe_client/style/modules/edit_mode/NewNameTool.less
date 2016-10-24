@@ -1,0 +1,109 @@
+#new-name-wrapper
+{
+  display: inline-block;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: @border_radius;
+}
+.new-name-wrapper-focus
+{
+  box-shadow: 0 0 @shadow_radius 3px @color_active !important;
+}
+
+.new-name-input
+{
+  display: block;
+  position: relative;
+  width: auto;
+  height: @input_text_height;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  text-align: center;
+  color: @color_white;
+}
+
+.no-value-change
+{
+  color: @color_disabled_active;
+}
+
+#newShortName
+{
+  font-size: @short_name_font_size;
+}
+
+#newFormalName
+{
+  font-size: @formal_name_font_size;
+  font-style: italic;
+}
+
+
+/* prevent outline on active input element */
+#new-name-wrapper:focus,
+#newShortName:focus,
+#newFormalName:focus
+{
+  outline: none;
+}
+
+#newNameOK
+{
+  position: absolute;
+  right: -(@button_diameter+@element_window_distance);
+  top: 0;
+}
+
+/*
+  It was f*** hard to come up with a div layout that allows for centering
+  both name inputs and the suggestions. CSS is horrible and should be renovated.
+  Please no major changes to this CSS layout and also to the @_resize() function
+  in NewNameTool.coffee
+ */
+
+#autocomplete-wrapper
+{
+  position: relative;
+  display: block;
+  width: auto;
+  text-align: center;
+}
+
+#autocomplete-spacer
+{
+  position: relative;
+  display: inline-block;
+  width: auto;
+  border-top: 1px solid @color_active;
+  padding-top: @border_radius/2;
+  padding-bottom: @border_radius/2;
+}
+
+
+/* override jQuery UI */
+#autocomplete-spacer > .ui-autocomplete
+{
+  position: static !important;
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  white-space: nowrap;
+  text-align: center;
+  color: @color_white;
+}
+#autocomplete-spacer > .ui-autocomplete > li:hover
+{
+  cursor: pointer;
+  background-color: @color_active;
+}
+#autocomplete-spacer .ui-state-focus
+{
+  background-color: @color_active;
+}

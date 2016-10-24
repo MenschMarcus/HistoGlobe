@@ -1,0 +1,43 @@
+.leaflet-label {
+  pointer-events: none;
+
+  background-color: transparent;
+  border-color: transparent;
+
+  color: @color_bg_medium;
+  text-shadow:
+    -1px -1px 1px @color_bg_light,
+     1px -1px 1px @color_bg_light,
+    -1px  1px 1px @color_bg_light,
+     1px  1px 1px @color_bg_light;
+
+  font-family: @primary_font_face;
+  font-size: @map_label_size !important;
+  font-weight: lighter;
+  text-align: center;
+  line-height: 0.8em;
+
+  .transition(opacity 0.5s ease-in-out);
+
+  &.invisible {
+    opacity: 0.0 !important;
+  }
+}
+
+.leaflet-label-small {
+  font-size: 0.8em;
+}
+
+.leaflet-marker-pane {
+  z-index: 10 !important;
+}
+
+.tooltip-inner {
+  z-index: 30 !important;
+}
+
+.highContrast .leaflet-label
+{
+  // font-size: 1.2em !important;
+  text-shadow: 0px 0px 1px white;
+}

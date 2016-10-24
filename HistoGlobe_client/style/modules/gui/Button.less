@@ -1,0 +1,67 @@
+.button
+{
+  display: block;
+  padding: 4px;
+  margin: 5px;
+  width: @button_diameter;
+  height: @button_diameter;
+  border-radius: @button_diameter*0.5;
+  background-color: @color_highlight;
+  font-size: @button_diameter * @ui_widget_font_size_factor;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+.button:hover
+{
+  color: @color_active;
+}
+
+.button-disabled, .button-disabled-active
+{
+  cursor: auto;
+  pointer-events: none;   /*disables tooltip*/
+}
+
+.button-disabled
+{
+  background-color: @color_disabled;
+}
+.button-active
+{
+  background-color: @color_active;
+}
+.button-disabled-active
+{
+  background-color: @color_disabled_active;
+}
+
+.button-abort
+{
+  width: @button_diameter * @button_abort_shrink_factor;
+  height: @button_diameter * @button_abort_shrink_factor;
+  border-radius: @button_diameter * @button_abort_shrink_factor * 0.5;
+  font-size: @button_diameter * @button_abort_shrink_factor * @ui_widget_font_size_factor;
+  background-color: transparent;
+}
+
+.button-horizotal
+{
+  float: left;
+}
+
+.button-no-background
+{
+  background: none;
+  color: @color_highlight;
+}
+
+.own-button
+{
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 90% auto;
+}

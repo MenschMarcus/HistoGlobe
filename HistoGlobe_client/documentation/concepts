@@ -1,0 +1,18 @@
+
+communication Model <-> Controller <-> View
+  * MODEL -> CONTROLLER
+    Model never talks to Controller
+  * MODEL <- CONTROLLER
+    Controller sets / updates / deletes model directly (read and write)
+    => direct call of public member functions of Model class
+  * VIEW -> CONTROLLER
+    View knows its Controller
+    => direct call of public member functions of Controller class
+  * VIEW <- CONTROLLER
+    Controller does not its Views
+    => indirect communication via callbacks 'onChangeSomething'
+  * MODEL -> VIEW
+    Model never talks to the view
+  * MODEL <- VIEW
+    View knows the Model (read only!)
+    => direct access to public member functions / variables of Model class

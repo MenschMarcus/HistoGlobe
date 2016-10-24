@@ -1,0 +1,107 @@
+{
+  "#######################################################################": {},
+
+  "### MAIN HISTOGLOBE MODULE ###": {},
+
+  "HistoGlobe" :
+  {
+    "minYear": 1900,
+    "maxYear": 2050,
+    "nowYear": 2015,
+    "startPoint": [50.9869531, 11.3205004],
+    "dateFormat": "DD.MM.YYYY",
+    "configPath": "../HistoGlobe_client/config/",
+    "graphicsPath": "common/graphics/",
+    "tiles": "common/tiles/normal",
+    "tilesHC": "common/tiles/high_contrast"
+  },
+
+
+  "# =====================================================================": {},
+  "### HELPER MODULES ###": {},
+
+  "BrowserDetector": {},
+
+  "DatabaseInterface": {},
+
+
+  "# =====================================================================": {},
+  "### CONTROLLER MODULES ###": {},
+
+  "TimeController": {},
+
+  "AreaController": {},
+
+  "HiventController": {},
+
+
+  "# =====================================================================": {},
+  "### VIEW MODULES = USER INTERFACE -> REACT ON USER INTERACTION ###": {},
+
+  "# ---------------------------------------------------------------------": {},
+  "# BASIC UI #": {},
+
+  "Watermark":
+  {
+    "id":           "HGLogo",
+    "imageNormal":  "common/graphics/logo_normal.png",
+    "imageLight":   "common/graphics/logo_light.png"
+  },
+
+  "ControlButtonsTop":
+  {
+    "zoom":         true,
+    "fullscreen":   true,
+    "highContrast": true
+  },
+
+  "Imprint": {},
+
+
+  "# ---------------------------------------------------------------------": {},
+  "# MAP #": {},
+
+  "Map":
+  {
+    "minZoom": 3,
+    "maxZoom": 7,
+    "startZoom": 4
+  },
+
+  "AreasOnMap" : {},
+
+
+  "# ---------------------------------------------------------------------": {},
+  "# TIMELINE #": {},
+
+  "Timeline" :
+  {
+    "startZoom" : 5
+  },
+
+  "NowMarker" : {},
+
+  "ControlButtonsTimeline" :
+  {
+    "zoom": true
+  },
+
+
+  "# ---------------------------------------------------------------------": {},
+
+  "EditMode" :
+  {
+    "editOperationsPath": "common/editOperations.json"
+  },
+
+
+  "# ---------------------------------------------------------------------": {},
+  "# HISTOGRAPH #": {},
+
+  "HistoGraph" : {},
+
+  "AreasOnHistoGraph": {},
+
+
+  "#######################################################################": {}
+}

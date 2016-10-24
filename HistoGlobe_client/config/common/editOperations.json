@@ -1,0 +1,101 @@
+[
+  {
+    "id":           "CRE",
+    "steps":
+    [
+      {
+        "id":       "SET_NEW_TERR",
+        "num":      "1",
+        "title":    "create territory <br/> of new country"
+      },
+      {
+        "id":       "SET_NEW_NAME",
+        "num":      "1",
+        "title":    "create name <br/> of new country"
+      }
+    ]
+  },
+  {
+    "id":           "UNI",
+    "steps":
+    [
+      {
+        "id":       "SEL_OLD_AREA",
+        "num":      "2+",
+        "title":    "select all countries <br/> to be united"
+      },
+      {
+        "id":       "SET_NEW_NAME",
+        "num":      "1",
+        "title":    "create name <br/> of united country"
+      }
+    ]
+  },
+  {
+    "id":           "SEP",
+    "steps":
+    [
+      {
+        "id":       "SEL_OLD_AREA",
+        "num":      "1",
+        "title":    "select country <br/> to be separated"
+      },
+      {
+        "id":       "SET_NEW_TERR",
+        "num":      "2+",
+        "title":    "create territories <br/> of all separated countries"
+      },
+      {
+        "id":       "SET_NEW_NAME",
+        "title":    "create names <br/> of all separated countries"
+      }
+    ]
+  },
+  {
+    "id":           "TCH",
+    "steps":
+    [
+      {
+        "id":       "SEL_OLD_AREA",
+        "num":      "1|2",
+        "title":    "select two countries whose <br/> border is to be changed"
+      },
+      {
+        "id":       "SET_NEW_TERR",
+        "num":      "1|2",
+        "title":    "create new territories <br/> of both countries"
+      },
+      {
+        "id":       "SET_NEW_NAME",
+        "title":    "reset names <br/> of both countries"
+      }
+    ]
+  },
+  {
+    "id":           "NCH",
+    "steps":
+    [
+      {
+        "id":       "SEL_OLD_AREA",
+        "num":      "1",
+        "title":    "select country whose <br/> name is to be changed"
+      },
+      {
+        "id":       "SET_NEW_NAME",
+        "num":      "1",
+        "title":    "create new name <br/> of the country"
+      }
+    ]
+  },
+  {
+    "id":           "DES",
+    "steps":
+    [
+      {
+        "id":       "SEL_OLD_AREA",
+        "num":      "1+",
+        "title":    "select all countries to be deleted"
+      }
+    ]
+  }
+]

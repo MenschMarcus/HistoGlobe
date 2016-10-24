@@ -1,0 +1,51 @@
+.guiPopover {
+  z-index: 5;
+  cursor: move;
+
+  .guiPopoverBodyV1, .guiPopoverBodyV2 {
+
+    .guiPopoverContent {
+
+      .gallery {
+
+        padding: 0px;
+
+        li {
+          width: 100%;
+          overflow: hidden;
+          display: inline-block;
+        }
+
+        a {
+          border-bottom: @border_width solid @border_color_dark;
+          display: block;
+          height: 100px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+
+          .fullscreen & {
+            height: 250px;
+          }
+        }
+      }
+
+      -webkit-touch-callout: text;
+      -webkit-user-select: text;
+      -khtml-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
+    }
+  }
+}
+
+
+.hiventInfoPopoverSource {
+  color: #FFF;
+  text-align: left;
+  text-shadow: 1px 1px 2px #000;
+  font-size: 8pt;
+  margin-top: -25px;
+  padding-left: 5px;
+}

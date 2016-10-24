@@ -1,0 +1,19 @@
+#controlButtonsTimeline
+{
+  z-index: 20;
+  left: 0;
+  bottom: 0;
+  padding-left: @element_window_distance; /* aligns buttons to other buttons */
+  height: @timeline_height;
+  background-color: @color_bg_dark;
+
+  .buttons-group
+  {
+    margin-top: -2px;
+  }
+}
+
+.highContrast #controlButtonsTimeline
+{
+  background-color: #000000;
+}

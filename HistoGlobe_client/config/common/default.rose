@@ -1,0 +1,154 @@
+// access variables
+//    in *.coffee:  HGConfig.var_name.val
+//    in *.less:    @var_name
+
+
+// GLOBAL TWEAKING -------------------------------------------------------------
+
+$max_area_selection                 = 50  // [areas]
+$time_leap_threshold                = 20  // [years]
+$change_queue_interval              = 50  // [ms]
+$slow_animation_time                = 550 // [ms]
+$fast_animation_time                = 300 // [ms]
+$area_loading_chunk_size            = 50  // [areas]
+
+
+// GLOBAL STYLE ----------------------------------------------------------------
+
+$primary_font_face                  = sans-serif
+$secondary_font_face                = sans-serif
+$input_text_height                  = 25px;
+
+$color_white                        = rgb(250,250,250)
+$color_bg_light                     = rgb(222,222,222)
+$color_bg_medium                    = rgb(47,59,70)
+$color_bg_dark                      = rgb(18,18,18)
+$color_bg_hc                        = rgb(19,31,41)
+$color_highlight                    = rgb(213,201,0)
+$color_active                       = rgb(213,125,0)
+$color_disabled                     = rgb(222,222,222)
+$color_disabled_active              = rgb(140,140,140)
+
+$border_radius                      = 15px
+$shadow_radius                      = 10px
+$shadow_intensity                   = 0.65
+
+
+// GENERAL UI ------------------------------------------------------------------
+
+$logo_height                        = 43px
+$logo_width                         = 100px
+$element_window_distance            = 15px
+$title_distance_horizontal          = 25px
+
+$button_diameter                    = 40px
+$button_abort_shrink_factor         = 0.75
+$button_spacer_distance             = 20px
+
+$ui_widget_font_size_factor         = 0.6
+
+
+// AREAS -----------------------------------------------------------------------
+
+$area_full_opacity                  = 0.75
+$area_half_opacity                  = 0.5
+$border_opacity                     = 0.6
+$border_width                       = 0.5px
+
+
+// MAP OPTIONS -----------------------------------------------------
+
+$map_min_width                      = 650px
+$map_label_size                     = 1.2em
+
+
+// TIMELINE & NOW MARKER & CONTROL BUTTONS TIMELINE ----------------------------
+
+$timeline_height                    = 45px
+$timeline_datemarker_size           = 15px
+$timeline_datemarker_line_height    = 30px
+$timeline_month_size                = 13px
+$timeline_month_opacity             = 0.3
+
+$now_marker_width                   = 120px
+$now_marker_font_size               = 1.2em
+$now_marker_opacity                 = 0.75
+$now_marker_opacity_hc              = 1
+
+
+// HISTOGRAPH ------------------------------------------------------------------
+
+$histograph_height                  = 175px
+$histograph_centerline_width        = 10px
+
+$histograph_area_line_width         = 5px
+$histograph_hivent_circle_radius    = 10px
+
+
+// EDIT OPERATION WINDOW -------------------------------------------------------
+
+$operation_window_height            = 120px
+$operation_step_width               = 175px
+$edit_buttons_top_distance          = 88px
+
+
+// NEW NAME TOOL ---------------------------------------------------------------
+
+$short_name_font_size               = 1.1em
+$formal_name_font_size              = 0.9em
+
+
+// HIVENT MARKERS --------------------------------------------------------------
+
+$hivent_marker_color                = rgb(37,121,191)
+$hivent_marker_color_light          = rgb(0,134,246)
+
+
+// IMPRINT OPTIONS -------------------------------------------------------------
+
+$imprint_width            = 800 px
+$imprint_height           = 600 px
+
+
+
+
+
+// ================================================================
+// TODO: cleanup from here on
+// ================================================================
+
+
+// POPOVERS --------------------------------------------------------------------
+
+$window_to_anchor_offset_x          = 0px
+$window_to_anchor_offset_y          = 30px
+$fullscreen_box_top_offset          = 10px
+$fullscreen_box_left_offset         = 120px
+$hiventlist_offset                  = 400px
+$popover_body_default_width         = 450px
+$popover_body_max_width             = 400px
+$popover_body_default_height        = 350px
+$popover_body_max_height            = 400px
+
+
+// FROM PROJECT STYLE.ROSE ----------------------------------------
+$border_color                       = rgb(255,255,255)
+$border_color_bright                = rgb(255,255,255)
+$border_color_dark                  = rgb(51,51,51)
+
+
+// HIVENT OPTIONS --------------------------------------------------
+
+$hivent_marker_2D_width               = 32px
+$hivent_marker_2D_height              = 32px
+
+$hivent_marker_timeline_width         = 32px
+$hivent_marker_timeline_height        = 32px
+$hivent_marker_timeline_margin_bottom = 3px
+$hivent_marker_timeline_spacing       = 10px
+$hivent_marker_timeline_min_distance  = 16px
+
+$hivent_marker_timeline_main_topic_offset_y  = 0px
+$hivent_marker_timeline_sub_topic_offset_y  = 30px
+
+$hivent_info_popover_arrow_height     = 15px

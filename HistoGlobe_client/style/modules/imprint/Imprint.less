@@ -1,0 +1,72 @@
+#imprint-link
+{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #aaa;
+  z-index: 5;
+  font-size: 0.7em;
+  margin-bottom: 2px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+#imprint-overlay
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: none;
+  z-index: 999;
+}
+
+#imprint-box
+{
+  margin: 0 auto;
+  margin-top: 50px;
+  width: @imprint_width;
+  height: @imprint_height;
+  overflow-y: auto;
+  padding: @popover_body_padding;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px @shadow_radius rgba(0,0,0,@shadow_intensity);
+  -moz-box-shadow: 0px 0px @shadow_radius rgba(0,0,0,@shadow_intensity);
+  box-shadow: 0px 0px @shadow_radius rgba(0,0,0,@shadow_intensity);
+
+  font-family: @secondary_font_face;
+  font-size: 0.85em;
+
+  .close-button {
+    position: relative;
+    z-index: 5;
+    color: #d5c900;
+    font-size: 2.5em;
+    opacity: .75;
+    margin-right: 10px;
+    cursor: pointer;
+    float: right;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  & h1 {
+    font-family: @primary_font_face;
+    text-align: center;
+    font-size: 1.8em;
+  }
+  & h2 {
+    font-family: @primary_font_face;
+    font-size: 1.5em;
+  }
+  & h3 {
+    font-family: @primary_font_face;
+    font-size: 1.2em;
+  }
+}

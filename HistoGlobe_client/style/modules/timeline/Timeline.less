@@ -1,0 +1,82 @@
+#bottom-area
+{
+  box-shadow: 0px 0px @shadow_radius rgba(0,0,0,@shadow_intensity);
+  overflow: visible !important;
+  font-family: @primary_font_face;
+
+  #tl-main
+  {
+    position:   absolute;
+    left:       0px;
+    bottom:     0px;
+    height:     @timeline_height;
+    min-width:  100%;
+    overflow:   visible !important;
+    cursor:     -webkit-grab;
+    cursor:     -moz-grab;
+
+    /* contains both timeline slider and HistoGraph */
+    #tl-wrapper
+    {
+      height: @timeline_height;
+      background-color: @color_bg_medium;
+
+      #tl-slide
+      {
+        height: @timeline_height;
+
+        .tl-datemarker
+        {
+          position: absolute;
+          z-index: 2;
+          bottom: @timeline_height / 2;
+          left: 0;
+          padding: 0px 0px 0px 5px;
+
+          font-size: @timeline_datemarker_size;
+          line-height: @timeline_datemarker_line_height;
+          color: @color_white;
+          font-weight: 100;
+          display: none;
+
+          .tl-months
+          {
+            position: relative;
+            height: 0px;
+            margin: -13px 0px 0px -5px;
+
+            .tl-month
+            {
+              position: absolute;
+              overflow: hidden;
+              z-index: 1;
+              padding-left: 5px;
+              font-size: @timeline_month_size;
+              text-align: center;
+              color: @color_white;
+              opacity: @timeline_month_opacity;
+              text-overflow: clip;
+            }
+          }
+        }
+      }
+    }
+
+    #tl-border
+    {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: @timeline_height;
+      border-top: 1px solid @color_bg_dark;
+      pointer-events:none; /*click through*/
+    }
+  }
+}
+
+.highContrast #bottom-area #tl #tl-wrapper #tl-slide
+{
+    background-color: @color_bg_hc;
+}

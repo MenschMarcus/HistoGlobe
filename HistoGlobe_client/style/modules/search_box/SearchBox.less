@@ -1,0 +1,205 @@
+@hg_grey: #575756; //HistoGlobe dunkelgrau
+@hg_green: #d5c900; //HistoGlobe gelbgrün
+.logo-area {
+  position: absolute;
+  top: 10px;
+  left: 19px;
+
+  margin: 5px 5px 5px 0;
+  font-size: 20pt * @ui_widget_font_size_factor;
+  z-index: 10;
+
+  .logo {
+    color: @color_bg_medium;
+    cursor: auto;
+    padding: 0px 8px 0 8px;
+    text-align: center;
+
+    .hg-logo{
+      background-color: transparent;
+      width: 80px;
+    }
+  }
+}
+
+.search-box-area {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  font-size: 20pt * @ui_widget_font_size_factor;
+  z-index: 10;
+
+  .transition-property(left);
+  .transition-duration(@fast_animation_time);
+
+  .search-box {
+    top: 5px;
+    left: 100px;
+    height: 29px;
+    width: 270px;
+    box-shadow: 0px 0px @shadow_radius rgba(0,0,0,@shadow_intensity);
+
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+
+    .search-form {
+      height: 29px;
+
+      #search-input {
+        position: absolute;
+        margin: 0;
+        top: 0px;
+        height: 29px;
+        width: 270px;
+        padding-left: 5px;
+        font-family: roboto;
+        font-weight: 100;
+        font-size:16px;
+        outline: none;
+        text-align: left;
+        text-decoration: none;
+        color: #000000;
+        border: none;
+      }
+
+      .clear {
+        position: absolute;
+        top: 0px;
+        left: 252px;
+        height: 29px;
+        float:left;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        color: @hg_green;
+        font-weight: bold;
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 0px;
+        left: 236px;
+        float:left;
+        height: 29px;
+        padding: 4px 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:15px;
+        outline: none;
+        cursor: auto;
+        text-align: center;
+        text-decoration: none;
+        color: @hg_green;
+        background: transparent;
+      }
+    }
+
+
+    /* Fixes height problem in Firefox */
+    .search-icon::-moz-focus-inner {
+      border: 0;
+    }
+
+    #search-results {
+      position: absolute;
+      top: 32px;
+      width: 270px;
+      //max-height: 300px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      font-size:15px;
+      color: #000000;
+      background: #ffffff;
+
+      transition: 1s;
+      -webkit-transition: 1s;
+
+      -webkit-box-shadow: 0px 0px 3px #888888;
+      -moz-box-shadow: 0px 0px 3px #888888;
+      box-shadow: 0px 0px 3px #888888;
+
+      span {
+        padding: 5px;
+        color: #898888;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        //font-weight: bold;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+
+        a {
+          color: #286b7a;
+          &:hover {
+            text-decoration: none;
+          }
+          li {
+            font-family: @primary_font_face;
+            white-space: nowrap;
+            padding: 5px;
+            border-bottom: solid 1px #ddd;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            .wrap {
+              float: right;
+              width: 90%;
+              max-width: 265px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              .res_location {
+                float: left;
+                max-width: 250px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: #898888;
+              }
+
+              .res_year {
+                float:right;
+                color: #898888;
+              }
+            }
+
+            i {
+              color: #286b7a;
+              margin-right: 5px;
+              margin-left: 5px;
+              margin-top: 12px;
+              //float: left;
+              //width: 20%
+            }
+          }
+        }
+      }
+    }
+
+    #search-results:empty {
+        display:none;
+    }
+
+    #options {
+      width: 320px;
+      padding: 0px 5px;
+      background: #ffffff;
+
+      .msg {
+        font-size:16px;
+        color: #000000;
+      }
+
+      .selection {
+        font-size:14px;
+        color: #000000;
+      }
+    }
+  }
+}
+
+.itemhover_list {
+  background: #f0f0f0;
+}

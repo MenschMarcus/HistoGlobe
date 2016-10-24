@@ -1,0 +1,28 @@
+#nowMarker
+{
+  position: absolute;
+  z-index: 10;
+  width: @now_marker_width;
+  height: @timeline_height;
+  bottom: 0;
+  left: 50%;
+  margin-left: -@now_marker_width/2;
+  padding: 0px 20px;
+
+  color: @color_white;
+  background-color: @color_bg_dark;
+  opacity: @now_marker_opacity;
+  text-align: center;
+  font-family: Roboto;
+  font-size: @now_marker_font_size;
+  font-weight: 100;
+  line-height: @timeline_height;
+
+	pointer-events: none; // MAGIC: click trough element
+}
+
+.highContrast #nowMarker {
+  background-color: @color_bg_hc;
+	opacity: @now_marker_opacity_hc;
+  font-weight: bold;
+}

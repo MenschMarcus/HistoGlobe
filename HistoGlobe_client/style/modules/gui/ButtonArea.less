@@ -1,0 +1,69 @@
+.button-area
+{
+  position: relative;
+}
+.button-area-abs
+{
+  position: absolute;
+}
+
+.button-area-bottom
+{
+  bottom: @element_window_distance;
+  .button
+  {
+    margin-bottom: 0
+  }
+}
+
+.button-area-top
+{
+  top: @element_window_distance;
+  .button
+  {
+    margin-top: 0
+  }
+}
+
+.button-area-left
+{
+  left: @element_window_distance;
+  .button
+  {
+    margin-left: 0
+  }
+}
+
+.button-area-right
+{
+  right: @element_window_distance;
+  .button
+  {
+    margin-right: 0
+  }
+}
+
+.buttons-group-horizontal
+{
+  float: left;
+  .button
+  {
+    float: left;
+  }
+}
+
+.spacer
+{
+  width: @button_spacer_distance;
+  height: @button_spacer_distance;
+}
+
+.highContrast .button-area   {
+  .buttons-group {
+    .button {
+      background-color: #ece791;
+      color: #000000;
+      border: solid 1px #131f29;
+    }
+  }
+}

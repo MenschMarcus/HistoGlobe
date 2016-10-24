@@ -1,0 +1,84 @@
+@category_default_default_icon:    '../data/hivent_icons/icon_default.png';
+@category_default_highlight_icon:  '../data/hivent_icons/icon_default_highlight.png';
+@category_join_default_icon:       '../data/hivent_icons/icon_join.png';
+@category_join_highlight_icon:     '../data/hivent_icons/icon_join_highlight.png';
+@category_contract_default_icon:   '../data/hivent_icons/icon_contract.png';
+@category_contract_highlight_icon: '../data/hivent_icons/icon_contract_highlight.png';
+
+@hivent_marker_timeline_width: 18px;
+@hivent_marker_timeline_height: 18px;
+
+@hivent_marker_2D_width: 32px;
+@hivent_marker_2D_height: 32px;
+
+.hivent_marker_timeline (@image){
+  width: @hivent_marker_timeline_width;
+  height: @hivent_marker_timeline_height;
+  position: absolute;
+  background-image: url(@image);
+  background-size: cover;
+}
+
+.hivent_marker_timeline_label {
+  z-index: 1;
+  position: absolute;
+}
+
+.hivent_marker_2D (@image){
+  width: @hivent_marker_2D_width !important;
+  height: @hivent_marker_2D_height !important;
+  margin-top: -@hivent_marker_2D_height / 2;
+  margin-left: -@hivent_marker_2D_width / 2;
+  position: absolute !important;
+  background-image: url(@image) !important;
+  background-size: cover !important;
+}
+
+.hivent_marker_timeline_default_default {
+  .hivent_marker_timeline(@category_default_default_icon);
+}
+
+.hivent_marker_timeline_default_highlighted {
+  .hivent_marker_timeline(@category_default_highlight_icon);
+}
+
+.hivent_marker_timeline_join_default {
+  .hivent_marker_timeline(@category_join_default_icon);
+}
+
+.hivent_marker_timeline_join_highlighted {
+  .hivent_marker_timeline(@category_join_highlight_icon);
+}
+
+.hivent_marker_timeline_contract_default {
+  .hivent_marker_timeline(@category_contract_default_icon);
+}
+
+.hivent_marker_timeline_contract_highlighted {
+  .hivent_marker_timeline(@category_contract_highlight_icon);
+}
+
+
+.hivent_marker_2D_default_default {
+  .hivent_marker_2D(@category_default_default_icon);
+}
+
+.hivent_marker_2D_default_highlighted {
+  .hivent_marker_2D(@category_default_highlight_icon);
+}
+
+.hivent_marker_2D_join_default {
+  .hivent_marker_2D(@category_join_default_icon);
+}
+
+.hivent_marker_2D_join_highlighted {
+  .hivent_marker_2D(@category_join_highlight_icon);
+}
+
+.hivent_marker_2D_contract_default {
+  .hivent_marker_2D(@category_contract_default_icon);
+}
+
+.hivent_marker_2D_contract_highlighted {
+  .hivent_marker_2D(@category_contract_highlight_icon);
+}

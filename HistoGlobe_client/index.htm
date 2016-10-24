@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='de-de' lang='de-de' dir='ltr'>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
+
+    <link rel="shortcut icon" href='{% static "config/common/graphics/favicon.ico" %}' type="image/x-icon" />
+
+    <title>HistoGlobe</title>
+
+    <!-- STYLESHEET -->
+
+    <!-- fonts-->
+
+    <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Roboto:500,400italic,700italic,300,700,500italic,300italic,400' />
+    <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Montserrat:400,700' />
+    <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' />
+
+    <!-- third party styles-->
+
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/bootstrap.min.css" %}' />
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/idangerous.swiper.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/idangerous.swiper.scrollbar.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/colorbox.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/MarkerCluster.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/MarkerCluster.Default.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/leaflet.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/leaflet.label.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/leaflet.draw.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/jquery.jscrollpane.css" %}' />
+    <link rel="stylesheet" type="text/css" href='{% static "style/third-party/select2.css" %}' />
+
+    <!--[if lte IE 8]>hivent
+      <link rel="stylesheet" href='{% static "style/third-party/leaflet.ie.css" %}' />
+      <link rel="stylesheet" href='{% static "style/third-party/MarkerCluster.Default.ie.css" %}' />
+    <![endif]-->
+
+    <!-- own styles -->
+
+    <link rel="stylesheet" type="text/css" href='{% static "style/histoglobe.min.css" %}' />
+
+
+    <!-- SCRIPTS -->
+
+    <!-- third-party -->
+    <script type="text/javascript" src='{% static "build/d3.v3.min.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/jquery-2.2.0.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.browser.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.disable.text.select.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.mousewheel.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.rotate.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.colorbox-min.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.fullscreenApi.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.parse.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.jplayer.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery-ui.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jquery.scroll.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/idangerous.swiper.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/idangerous.swiper.scrollbar.min.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/bootstrap.min.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/leaflet.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/leaflet.label.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/leaflet.markercluster.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/leaflet.draw.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/wicket.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/wicket-leaflet.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/javascript.util.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/jsts.min.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/three.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/TessellateModifier.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/BrowserDetect.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/select2.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/undomanager.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/moment.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Queue.js" %}'></script>
+
+
+    <!-- utils -->
+    <script type="text/javascript" src='{% static "build/DOMElementCreator.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/NumberInput.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/TextInput.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/TextInputArea.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Switch.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/Geometry.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Polypolygon.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Polygon.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Polyline.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Point.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/GeometryReader.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/GeometryOperator.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/ABTest.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/CSSCreator.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/CallbackContainer.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/DoublyLinkedList.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/DoublyLinkedListNode.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Mixin.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/ObjectArray.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/StateVar.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Vector.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/WithinTree.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/WithinTreeNode.js" %}'></script>
+
+    <!-- modules -->
+    <script type="text/javascript" src='{% static "build/SpatialDisplay.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Map.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/AreaHandle.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Area.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/AreaTerritory.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/AreaName.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/AreaChange.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/AreaController.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/AreasOnMap.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/AreaTerritoryLayerOnMap.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/AreaNameLayerOnMap.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/AreasOnHistoGraph.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/LabelManager.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/BrowserDetector.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/CategoryFilter.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/CategoryIconMapping.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/ControlButtonsTop.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/DatabaseInterface.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/EditMode.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/EditOperation.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/EditOperationStep.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/EditOperationStep.SelectOldAreas.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/EditOperationStep.CreateNewTerritories.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/EditOperationStep.CreateNewNames.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/EditOperationStep.AddChange.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/NewTerritoryTool.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/NewNameTool.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/NewHiventBox.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/WorkflowWindow.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/ButtonArea.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Button.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Popover.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Title.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/Help.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/HistoGraph.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/HiventHandle.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/Hivent.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HistoricalChange.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventController.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventInfoAtTag.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventInfoPopover.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventInfoPopovers.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventMarker.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventMarker2D.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventMarkerTimeline.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventPresenter.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventTooltips.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventsOnMap.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/HiventsOnTimeline.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/Imprint.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/MultimediaController.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/SearchBoxArea.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/SearchBoxForm.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/Timeline.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/NowMarker.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/ControlButtonsTimeline.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/TimeController.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/Watermark.js" %}'></script>
+
+
+    <!-- main -->
+    <script type="text/javascript" src='{% static "build/default_config.js" %}'></script>
+    <script type="text/javascript" src='{% static "build/config.js" %}'></script>
+
+    <script type="text/javascript" src='{% static "build/HistoGlobe.js" %}'></script>
+
+
+    <!-- INIT HISTOGLOBE -->
+
+    <script type="text/javascript">
+      $(document).ready(function($) {
+        // $CURRENT_PROJECT_PATH$ is set by make.sh
+        // TODO: load name of project directly from config.py
+        var histoglobe = new HG.HistoGlobe('{% static "config/master/modules.json" %}');
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <!-- display warning if no javascript is available -->
+    <noscript>
+      <div class='container'>
+        <div class='jumbotron' style='margin-top:5%'>
+          <h1><span class='hg'>HistoGlobe</span> benötigt Javascript!</h1>
+          <p>Bitte aktivieren Sie in Ihrem Browser Javascript, da <span class='hg'>HistoGlobe</span> sonst nicht funktioniert.</p>
+          <p><a href='http://www.enable-javascript.com/de/' class='btn btn-primary btn-lg' role='button'>Wie aktiviere ich Javascript?</a></p>
+        </div>
+      </div>
+    </noscript>
+
+  </body>
+
+</html>

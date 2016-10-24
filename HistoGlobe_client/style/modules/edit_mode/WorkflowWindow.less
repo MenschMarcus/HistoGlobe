@@ -1,0 +1,91 @@
+#ww-main-window
+{
+  position: absolute;
+  top: 0;
+  background-color: @color_bg_medium;
+  border-radius: 0 0 @border_radius @border_radius;
+}
+
+#ww-graph-wrapper
+{
+  /* align with hg title (same height, no background) */
+  width: 100%;
+  height: 2*@element_window_distance + @logo_height;
+}
+
+#ww-description-wrapper
+{
+  /* underneath hg title (take rest of height of main window, same style as title) */
+  width: 100%;
+  height: @operation_window_height - (2*@element_window_distance + @logo_height);
+  box-shadow: 0 7px @shadow_radius -7px rgba(0,0,0,@shadow_intensity);
+  border-radius: 0 0 @border_radius @border_radius;
+}
+
+.ww-graph-row
+{
+  float:  left;
+  height: 2*@element_window_distance + @logo_height;
+}
+.ww-description-row
+{
+  float:  left;
+  height: @operation_window_height - (2*@element_window_distance + @logo_height);
+}
+
+.ww-button-col
+{
+  width: @button_diameter + @element_window_distance;
+  margin-top: -5px;
+}
+.ww-step-col
+{
+  width: @operation_step_width;
+}
+
+.ww-description-cell
+{
+  color: @color_disabled_active;
+  text-align: center;
+  vertical-align: bottom;
+}
+.ww-current-description
+{
+  color: @color_white;
+}
+
+#abort-button-parent
+{
+  padding-left: 8px;
+}
+
+#next-button-parent
+{
+  padding-left: 4px;
+}
+
+
+/* graph bar */
+
+#graph-canvas
+{
+  position: absolute;
+}
+
+#graph-bar
+{
+  stroke-width: 5px;
+  stroke: @color_bg_dark;
+}
+
+#graph-circle
+{
+  stroke: none;
+  fill: @color_bg_dark;
+}
+
+#graph-step-marker
+{
+  stroke: none;
+  fill: @color_active;
+}
