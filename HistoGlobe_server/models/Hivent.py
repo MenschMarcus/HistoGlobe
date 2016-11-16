@@ -19,21 +19,32 @@ from django.forms.models import model_to_dict
 # ------------------------------------------------------------------------------
 class Hivent(models.Model):
 
+  ## name of the Hivent
   name =        models.CharField      (max_length=150, default='')
+
+  ## date on which the Hivent happened (YYYY-MM-DD)
   date =        models.DateTimeField  (default=timezone.now)
+
+  ## location on which the Hivent happened
+  ## TODO: use a geographic location, not just a string
   location =    models.CharField      (null=True, max_length=150)
+
+  ## textual description of what happened in the Hivent
+  ## TODO: get from Wikipedia
   description = models.CharField      (null=True, max_length=1000)
-  link =        models.CharField      (null=True, max_length=300)
+
+  ## link to the Wikipedia article
+  link =        models.URLField       (null=True, max_length=300)
 
 
-  # ============================================================================
+  # ===========================================================================
   def __unicode__(self):
     return self.name
 
 
-  # ============================================================================
+  # ===========================================================================
   # givent set of validated (!) hivent data, update the Hivent properties
-  # ============================================================================
+  # ===========================================================================
 
   def update(self, hivent_data):
 
@@ -49,13 +60,13 @@ class Hivent(models.Model):
     return hivent
 
 
-  # ============================================================================
+  # ===========================================================================
   # return Hivent with all its associated Changes
-  # ============================================================================
+  # ===========================================================================
 
   def prepare_output(self):
 
-    from HistoGlobe_server.models import EditOperation, HiventOperation, OldArea, NewArea, UpdateArea
+    # from HistoGlobe_server.models import EditOperation, HiventOperation, OldArea, NewArea, UpdateArea
     from HistoGlobe_server import utils
     import chromelogger as console
 
@@ -94,7 +105,7 @@ class Hivent(models.Model):
     return hivent
 
 
-  # ============================================================================
+  # ===========================================================================
   class Meta:
     ordering = ['-date']  # descending order (2000 -> 0 -> -2000 -> ...)
     app_label = 'HistoGlobe_server'

@@ -1,16 +1,15 @@
 #!/bin/bash
 
-### set client root folder and perform everything there
+# set client root folder and perform everything there
 ROOT="HistoGlobe_client"
-## TODO: change fully
+# TODO: change fully
 
 # ---------------------------------------------------------------------------- #
-### set project
-
+# set project name
 PROJECT=master
 
 # ---------------------------------------------------------------------------- #
-### clean or create build directory
+# clean or create build directory
 if [ ! -d "$ROOT/build" ]; then
     mkdir $ROOT/build
 else
@@ -18,7 +17,8 @@ else
 fi
 
 # ---------------------------------------------------------------------------- #
-### I have no idea what this is doing ...
+# I have no idea what this is doing ...
+# rosetta compiles variables into both css and javascript, but who knows how?
 
 rosetta --jsOut "$ROOT/build/default_config.js" \
         --jsFormat "flat" \
@@ -33,19 +33,20 @@ rosetta --jsOut "$ROOT/build/config.js" \
         --cssFormat "less" $ROOT/config/$PROJECT/style.rose
 
 # ---------------------------------------------------------------------------- #
-### compile all coffeescript files to javascript and put into build folder
+# compile all coffeescript files to javascript and put into build folder
 cFiles=$(find $ROOT/script -name '*.coffee')
 coffee -c -o $ROOT/build $cFiles
 
-### copy all third-party libs into build folder
+# copy all third-party libs into build folder
 find $ROOT/script/third-party -name '*.js' -exec cp {} $ROOT/build \;
 
-### uglify all javascript files and compile to a single min
+# uglify all javascript files and compile to a single min
 # jFiles=$(find $ROOT/build -name '*.js')
 # uglifyjs $jFiles -o $ROOT/script/histoglobe.min.js #-mc
 
-### move project stylesheet into main style folder
-lessc --no-color -x $ROOT/config/$PROJECT/main.less $ROOT/style/histoglobe.min.css
+# move project stylesheet into main style folder
+## --clean-css minifies the result
+lessc --clean-css $ROOT/config/$PROJECT/main.less $ROOT/style/histoglobe.min.css
 
 ### ??!??!?!!!?!?!!!?!??!?!!!?!?!???!?!?!???!??!!!?!??!!?!??!??
 # sed -i "1s/.*/<?php \$config_path = '$PROJECT'; ?>/" $ROOT/config.php

@@ -6,22 +6,19 @@ HistoGlobe_server/migrations/
 
 ## OTHER CRAP
 
-*.sublime-workspace
 *.pdf
 Thumbs.db
 
+
 ### DATA FOLDERS
 
-HistoGlobe_server/data/
+data/
+misc/
 HistoGlobe_client/config/common/tiles
-HistoGlobe_client/config/full
+
 
 ### HISTOGLOBE BUILD CRAP
 
 HistoGlobe_client/build
 HistoGlobe_client/script/histoglobe.min.js
 HistoGlobe_client/style/histoglobe.min.css
-
-### SAMPLE FILE
-HistoGlobe_client/script/util/EmptyClass.coffee
-HistoGlobe_client/config/common/example.json

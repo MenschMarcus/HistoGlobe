@@ -99,9 +99,9 @@ STATICFILES_DIRS = (
 DATABASES = {
   'default': {
     'ENGINE':   'django.contrib.gis.db.backends.postgis',
-    'NAME':     'histoglobe_database',
-    'USER':     'histoglobe_user',
-    'PASSWORD': '12345',
+    'NAME':     'hg_db',
+    'USER':     'hg_usr',
+    'PASSWORD': 'hg_pwd',
     'HOST':     'localhost',
     'PORT':     '',
   }

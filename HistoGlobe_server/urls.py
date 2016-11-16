@@ -1,4 +1,4 @@
-from django.conf.urls import url, include, patterns
+from django.conf.urls import url, include
 from django.contrib.gis import admin
 from HistoGlobe_server import views
 

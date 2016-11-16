@@ -1,7 +1,6 @@
 # ==============================================================================
-# The AreaTerritory stores the spatial dimension of an Area
-# - the geometry as a Polypolygon (MultiPolygon)
-# - the representative point of the territory (Point)
+# The AreaBorder stores the spatial dimension of an Area. It represents one
+# atmic closed borderline, geometrically a Polyline.
 #
 # ------------------------------------------------------------------------------
 # AreaTerritory n:1 Area
@@ -15,38 +14,38 @@ from djgeojson.fields import *
 from django.forms.models import model_to_dict
 
 # ==============================================================================
-class AreaTerritory(models.Model):
+class AreaBorder(models.Model):
 
   # superordinate: Area
-  area =                  models.ForeignKey         (
-                            'Area', related_name='territory_area', default='0')
+  area =          models.ForeignKey(
+                    'Area', related_name='border_of_area', default='0')
 
-  ## position of the name label on the map
-  ## TODO: calculate reasonable name position with intelligent algorithm
-  representative_point =  gis.db.models.PointField  (null=True)
+  ## borderline as polyline / linestring
+  borderline =    gis.db.models.LineStringField (default='LINESTRING EMPTY')
+
+  ## coastline (yes) or interior (no) border
+  is_coastline =  models.BooleanField           (default=True)
+
+  ## how certainly is this border accurate? in range ]0 .. 1]
+  ## 1 = absolutely certain, 0 = absolutely uncertain
+  certainty =     models.FloatField             (default=1.0)
 
   # overriding the default manager with a GeoManager instance.
   # didn't quite understand what this is for...
-  objects =               gis.db.models.GeoManager  ()
+  objects =       gis.db.models.GeoManager      ()
 
 
   # ============================================================================
   def __unicode__(self):
     return str(self.id)
 
-
   # ============================================================================
-  # make territory ready to output (use wkt string of geometry)
+  # check if certainty level is in range ]0 .. 1] and correct to 1
   # ============================================================================
 
-  def prepare_output(self):
-
-    return({
-      'id':                   self.id,
-      'area':                 self.area.id,
-      'representative_point': self.representative_point.wkt,
-    })
-
+  def check_certainty(self):
+    if not ((self.certainty > 0.0) and (self.certainty <= 1.0)):
+      self.certainty = 1.0
 
   # ============================================================================
   class Meta:

@@ -1,3 +1,3 @@
-  # javascript  python
-  # object      dictionary
-  # array       list
+# javascript  python
+# object      dictionary
+# array       list
